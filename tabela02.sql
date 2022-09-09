@@ -1,5 +1,5 @@
 
-create table tabela05(
+create table tabela02(
 
 nome varchar(100),
 
