@@ -1,12 +1,18 @@
-FROM mysql:5.7
+FROM mysql:8.0.30-debian
+
+ENV MYSQL_ROOT_PASSWORD 1234
 
 RUN apt-get update
 
-RUN apt-get install git
+RUN apt-get -y install git
+
+WORKDIR /media
 
 RUN git clone https://github.com/Sam0929/SQL-DOCKER
 
-RUN mv TABELA 01 TESTE.sql /docker-entrypoint-initdb.d/
+WORKDIR SQL-DOCKER
+
+RUN mv -i TABELA01TESTE.sql /docker-entrypoint-initdb.d/
 
 
 
